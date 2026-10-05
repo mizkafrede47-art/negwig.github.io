@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Профессиональные консультации по недвижимости. Покупка, продажа, аренда, проверка документов и сопровождение сделок.">
+<title>Эксперт по недвижимости — консультация</title>
+
+<style>
+:root{
+  --ink:#171717;
+  --muted:#686868;
+  --line:#dedbd4;
+  --paper:#f5f3ee;
+  --white:#fff;
+  --accent:#b8a27a;
+  --dark:#20211f;
+  --max:1180px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.5;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(calc(100% - 40px),var(--max));
+  margin:auto;
+}
+
+/* HEADER */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(245,243,238,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+
+.logo{
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:-.04em;
+}
+
+.logo span{
+  font-weight:400;
+  color:var(--muted);
+}
+
+.menu{
+  display:flex;
+  gap:28px;
+  font-size:14px;
+}
+
+.menu a{
+  color:#444;
+  transition:.2s;
+}
+
+.menu a:hover{
+  color:#000;
+}
+
+.phone{
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* HERO */
+
+.hero{
+  padding:82px 0 90px;
+  background:var(--paper);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:70px;
+  align-items:center;
+}
+
+.kicker{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:#7b715f;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(46px,6vw,78px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  margin:0 0 28px;
+  font-weight:700;
+}
+
+.lead{
+  font-size:19px;
+  line-height:1.55;
+  color:#505050;
+  max-width:650px;
+  margin-bottom:34px;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--ink);
+  padding:15px 23px;
+  font-size:14px;
+  font-weight:700;
+  transition:.2s;
+  cursor:pointer;
+}
+
+.btn.dark{
+  background:var(--dark);
+  color:#fff;
+}
+
+.btn.dark:hover{
+  background:#000;
+  transform:translateY(-2px);
+}
+
+.btn.light{
+  background:transparent;
+}
+
+.btn.light:hover{
+  background:#fff;
+}
+
+.hero-card{
+  background:var(--dark);
+  color:#fff;
+  padding:38px;
+  min-height:440px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-card:after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  right:-120px;
+  top:-100px;
+}
+
+.hero-card .number{
+  font-size:100px;
+  line-height:.8;
+  font-weight:700;
+  letter-spacing:-.08em;
+  color:#d0c1a5;
+}
+
+.hero-card h2{
+  font-size:30px;
+  line-height:1.05;
+  max-width:380px;
+  margin:0 0 14px;
+}
+
+.hero-card p{
+  color:#c7c7c7;
+  max-width:400px;
+}
+
+/* TRUST */
+
+.trust{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:23px 0;
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.trust-item{
+  font-size:14px;
+  color:#4f4f4f;
+}
+
+.trust-item b{
+  display:block;
+  font-size:24px;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+
+/* SECTIONS */
+
+.section{
+  padding:100px 0;
+}
+
+.section-head{
+  display:grid;
+  grid-template-columns:.65fr 1.35fr;
+  gap:50px;
+  margin-bottom:55px;
+}
+
+.eyebrow{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  color:#81755f;
+}
+
+.section h2{
+  font-size:clamp(36px,4vw,56px);
+  line-height:1;
+  letter-spacing:-.05em;
+  margin:0;
+}
+
+.section-intro{
+  font-size:18px;
+  color:#5d5d5d;
+  max-width:650px;
+}
+
+/* SERVICES */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border-top:1px solid var(--line);
+}
+
+.service{
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:20px;
+}
+
+.service:nth-child(odd){
+  padding-right:35px;
+  border-right:1px solid var(--line);
+}
+
+.service:nth-child(even){
+  padding-left:35px;
+}
+
+.service-num{
+  font-size:13px;
+  color:#99886b;
+}
+
+.service h3{
+  font-size:23px;
+  margin:0 0 8px;
+}
+
+.service p{
+  margin:0;
+  color:#666;
+}
+
+/* STEPS */
+
+.steps{
+  background:#20211f;
+  color:#fff;
+}
+
+.steps .eyebrow{
+  color:#cbbb9e;
+}
+
+.steps .section-intro{
+  color:#bdbdbd;
+}
+
+.step-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border-top:1px solid #484844;
+}
+
+.step{
+  padding:35px 24px 35px 0;
+  border-bottom:1px solid #484844;
+}
+
+.step:not(:last-child){
+  border-right:1px solid #484844;
+  padding-right:25px;
+  margin-right:25px;
+}
+
+.step .num{
+  font-size:12px;
+  color:#cbbb9e;
+  margin-bottom:45px;
+}
+
+.step h3{
+  font-size:20px;
+  margin:0 0 10px;
+}
+
+.step p{
+  color:#aaa;
+  font-size:14px;
+  margin:0;
+}
+
+/* BENEFITS */
+
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.benefit{
+  background:#fff;
+  padding:34px;
+  min-height:220px;
+  border:1px solid #e7e3da;
+}
+
+.benefit .icon{
+  font-size:25px;
+  margin-bottom:35px;
+}
+
+.benefit h3{
+  margin:0 0 10px;
+  font-size:21px;
+}
+
+.benefit p{
+  margin:0;
+  color:#666;
+}
+
+/* CTA */
+
+.cta{
+  background:#ded5c5;
+  padding:80px 0;
+}
+
+.cta-grid{
+  display:grid;
+  grid-template-columns:1fr .75fr;
+  gap:70px;
+  align-items:center;
+}
+
+.cta h2{
+  font-size:clamp(38px,5vw,65px);
+  line-height:.98;
+  letter-spacing:-.05em;
+  margin:0 0 20px;
+}
+
+.cta p{
+  color:#5e5a52;
+  max-width:570px;
+}
+
+.form{
+  background:#fff;
+  padding:35px;
+}
+
+.form h3{
+  font-size:25px;
+  margin:0 0 20px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  border:0;
+  border-bottom:1px solid #bbb;
+  background:transparent;
+  padding:15px 0;
+  font:inherit;
+  outline:none;
+  margin-bottom:14px;
+}
+
+textarea{
+  resize:vertical;
+  min-height:80px;
+}
+
+.form .btn{
+  width:100%;
+  margin-top:10px;
+}
+
+.note{
+  font-size:11px;
+  color:#777;
+  margin-top:14px;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:900px;
+  margin:auto;
+}
+
+.faq-item{
+  border-top:1px solid var(--line);
+}
+
+.faq-q{
+  padding:24px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:700;
+}
+
+.faq-q span{
+  font-size:25px;
+  font-weight:400;
+}
+
+.faq-a{
+  display:none;
+  color:#666;
+  padding:0 40px 25px 0;
+}
+
+.faq-item.open .faq-a{
+  display:block;
+}
+
+/* FOOTER */
+
+.footer{
+  background:#181917;
+  color:#fff;
+  padding:60px 0 30px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer h3{
+  font-size:28px;
+  margin:0 0 15px;
+}
+
+.footer p,
+.footer a{
+  color:#aaa;
+  font-size:14px;
+}
+
+.footer-bottom{
+  border-top:1px solid #383936;
+  margin-top:45px;
+  padding-top:20px;
+  color:#777;
+  font-size:12px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .menu{
+    display:none;
+  }
+
+  .nav{
+    height:68px;
+  }
+
+  .hero-grid,
+  .cta-grid,
+  .section-head{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .hero{
+    padding:55px 0 65px;
+  }
+
+  .hero-card{
+    min-height:330px;
+  }
+
+  .trust-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .service:nth-child(odd){
+    padding-right:0;
+    border-right:0;
+  }
+
+  .service:nth-child(even){
+    padding-left:0;
+  }
+
+  .step-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .step:not(:last-child){
+    border-right:0;
+    margin-right:0;
+  }
+
+  .benefits{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+
+  .container{
+    width:min(calc(100% - 28px),var(--max));
+  }
+
+  h1{
+    font-size:45px;
+  }
+
+  .hero-card{
+    padding:27px;
+  }
+
+  .hero-card .number{
+    font-size:75px;
+  }
+
+  .trust-grid,
+  .step-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:70px 0;
+  }
+
+  .footer-bottom{
+    display:block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="container nav">
+
+    <a class="logo" href="#">
+      НЕДВИЖИМОСТЬ<span> / ЭКСПЕРТ</span>
+    </a>
+
+    <nav class="menu">
+      <a href="#services">Услуги</a>
+      <a href="#process">Как работаем</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <a class="phone" href="tel:+79165009896">
+      +7 (916) 500-98-96
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="kicker">
+        Мытищи · Москва · Московская область
+      </div>
+
+      <h1>
+        Разберём вашу ситуацию с недвижимостью
+      </h1>
+
+      <p class="lead">
+        Профессиональная консультация перед покупкой,
+        продажей или арендой. Поможем оценить объект,
+        документы, риски и дальнейшие шаги —
+        простым и понятным языком.
+      </p>
+
+      <div class="actions">
+
+        <a class="btn dark" href="#contacts">
+          Получить консультацию
+        </a>
+
+        <a class="btn light" href="#services">
+          Посмотреть услуги
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="number">
+        01
+      </div>
+
+      <div>
+
+        <h2>
+          Недвижимость — это большие деньги.
+          Решения должны быть взвешенными.
+        </h2>
+
+        <p>
+          Разберём документы и ситуацию до того,
+          как вы примете важное решение.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<section class="trust">
+
+  <div class="container trust-grid">
+
+    <div class="trust-item">
+      <b>10+</b>
+      лет практического опыта
+    </div>
+
+    <div class="trust-item">
+      <b>360°</b>
+      взгляд на сделку
+    </div>
+
+    <div class="trust-item">
+      <b>1:1</b>
+      индивидуальная работа
+    </div>
+
+    <div class="trust-item">
+      <b>100%</b>
+      понятные рекомендации
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        01 / Услуги
+      </div>
+
+      <div>
+
+        <h2>
+          Помощь на любом этапе сделки
+        </h2>
+
+        <p class="section-intro">
+          От одного вопроса до полного сопровождения.
+          Подбираем объём работы под конкретную ситуацию,
+          а не продаём ненужные услуги.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="services">
+
+      <article class="service">
+
+        <div class="service-num">01</div>
+
+        <div>
+          <h3>Покупка недвижимости</h3>
+
+          <p>
+            Помощь с выбором объекта, оценкой цены,
+            анализом документов и возможных рисков.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-num">02</div>
+
+        <div>
+          <h3>Продажа квартиры или дома</h3>
+
+          <p>
+            Разбор ситуации, рекомендации по цене,
+            подготовке объекта и стратегии продажи.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-num">03</div>
+
+        <div>
+          <h3>Проверка объекта</h3>
+
+          <p>
+            Анализ документов, собственников,
+            обременений и других важных обстоятельств.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-num">04</div>
+
+        <div>
+          <h3>Аренда</h3>
+
+          <p>
+            Консультация перед заключением договора
+            и помощь в оценке условий аренды.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-num">05</div>
+
+        <div>
+          <h3>Ипотека и расчёты</h3>
+
+          <p>
+            Помощь разобраться в вариантах сделки,
+            первоначальном взносе и финансовой нагрузке.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="service">
+
+        <div class="service-num">06</div>
+
+        <div>
+          <h3>Сложные ситуации</h3>
+
+          <p>
+            Перепланировки, доли, несколько собственников,
+            наследство и другие нестандартные случаи.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="section steps" id="process">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        02 / Процесс
+      </div>
+
+      <div>
+
+        <h2>
+          Без лишней бюрократии
+        </h2>
+
+        <p class="section-intro">
+          Сначала разбираемся в задаче, затем предлагаем
+          решение. Вы понимаете, что происходит
+          и за что платите.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="step-grid">
+
+      <div class="step">
+
+        <div class="num">
+          01 — ЗАПРОС
+        </div>
+
+        <h3>
+          Рассказываете ситуацию
+        </h3>
+
+        <p>
+          Коротко описываете объект и вопрос.
+          Можно приложить документы.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">
+          02 — АНАЛИЗ
+        </div>
+
+        <h3>
+          Изучаем детали
+        </h3>
+
+        <p>
+          Выявляем ключевые риски, ограничения
+          и возможные варианты.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">
+          03 — КОНСУЛЬТАЦИЯ
+        </div>
+
+        <h3>
+          Объясняем решение
+        </h3>
+
+        <p>
+          Разбираем ситуацию понятным языком
+          и отвечаем на вопросы.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="num">
+          04 — РЕЗУЛЬТАТ
+        </div>
+
+        <h3>
+          Даём план действий
+        </h3>
+
+        <p>
+          Фиксируем следующие шаги и при необходимости
+          сопровождаем сделку.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        03 / Почему мы
+      </div>
+
+      <div>
+
+        <h2>
+          Не обещаем невозможного —
+          показываем реальные варианты
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="benefits">
+
+      <article class="benefit">
+
+        <div class="icon">◼</div>
+
+        <h3>
+          Объективный взгляд
+        </h3>
+
+        <p>
+          Не заинтересованы в том, чтобы вы
+          соглашались на первый попавшийся вариант.
+        </p>
+
+      </article>
+
+
+      <article class="benefit">
+
+        <div class="icon">◇</div>
+
+        <h3>
+          Понятный язык
+        </h3>
+
+        <p>
+          Сложные вопросы недвижимости объясняем
+          без перегруженных юридических формулировок.
+        </p>
+
+      </article>
+
+
+      <article class="benefit">
+
+        <div class="icon">＋</div>
+
+        <h3>
+          Индивидуальный подход
+        </h3>
+
+        <p>
+          Каждая консультация начинается с вашей
+          ситуации, целей и документов.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT FORM -->
+
+<section class="cta" id="contacts">
+
+  <div class="container cta-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        04 / Консультация
+      </div>
+
+      <h2>
+        Есть вопрос по недвижимости?
+      </h2>
+
+      <p>
+        Оставьте контакты и кратко опишите задачу.
+        Мы свяжемся с вами и предложим удобный
+        формат консультации.
+      </p>
+
+    </div>
+
+
+    <form class="form" onsubmit="submitForm(event)">
+
+      <h3>
+        Получить консультацию
+      </h3>
+
+      <input
+        required
+        name="name"
+        placeholder="Ваше имя"
+      >
+
+      <input
+        required
+        name="phone"
+        type="tel"
+        placeholder="+7 (___) ___-__-__"
+      >
+
+      <select name="topic">
+
+        <option value="">
+          Что вас интересует?
+        </option>
+
+        <option>
+          Покупка недвижимости
+        </option>
+
+        <option>
+          Продажа недвижимости
+        </option>
+
+        <option>
+          Проверка объекта
+        </option>
+
+        <option>
+          Аренда
+        </option>
+
+        <option>
+          Ипотека
+        </option>
+
+        <option>
+          Другая ситуация
+        </option>
+
+      </select>
+
+
+      <textarea
+        name="message"
+        placeholder="Коротко опишите вопрос"
+      ></textarea>
+
+
+      <button class="btn dark" type="submit">
+        Отправить заявку
+      </button>
+
+      <div class="note">
+        Нажимая кнопку, вы соглашаетесь
+        на обработку персональных данных.
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section" id="faq">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        05 / FAQ
+      </div>
+
+      <div>
+
+        <h2>
+          Частые вопросы
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="faq">
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Сколько стоит консультация?
+          <span>+</span>
+        </div>
+
+        <div class="faq-a">
+          Стоимость зависит от задачи и объёма документов.
+          После короткого описания ситуации можно определить
+          подходящий формат и стоимость.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Можно ли провести консультацию дистанционно?
+          <span>+</span>
+        </div>
+
+        <div class="faq-a">
+          Да. Формат можно выбрать в зависимости
+          от ситуации: телефон, видеосвязь или
+          переписка с документами.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Можно ли проверить квартиру перед покупкой?
+          <span>+</span>
+        </div>
+
+        <div class="faq-a">
+          Да, можно отдельно разобрать документы
+          и обстоятельства объекта перед внесением
+          аванса или заключением сделки.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <div class="faq-q">
+          Работаете только в Мытищах?
+          <span>+</span>
+        </div>
+
+        <div class="faq-a">
+          Основной регион — Мытищи, Москва и
+          Московская область. Возможность работы
+          с объектом в другом регионе определяется
+          индивидуально.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>
+          НЕДВИЖИМОСТЬ / ЭКСПЕРТ
+        </h3>
+
+        <p>
+          Консультации и сопровождение сделок
+          с недвижимостью.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p>Контакты</p>
+
+        <a href="tel:+79165009896">
+          +7 (916) 500-98-96
+        </a>
+
+        <br>
+
+        <a href="mailto:yelena.yeletskaya.70@mail.ru">
+          yelena.yeletskaya.70@mail.ru
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <p>
+          Режим работы
+        </p>
+
+        <p>
+          Пн–Пт · 10:00–19:00<br>
+          Мытищи · Москва · МО
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Недвижимость / Эксперт
+      </span>
+
+      <span>
+        Политика конфиденциальности
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* FAQ */
+
+document.querySelectorAll('.faq-q').forEach(q => {
+
+  q.addEventListener('click', () => {
+
+    const item = q.parentElement;
+
+    item.classList.toggle('open');
+
+    q.querySelector('span').textContent =
+      item.classList.contains('open') ? '−' : '+';
+
+  });
+
+});
+
+
+/* FORM */
+
+function submitForm(e){
+
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = new FormData(form);
+
+  const subject = encodeURIComponent(
+    'Заявка с сайта — консультация по недвижимости'
+  );
+
+  const body = encodeURIComponent(
+
+    'Имя: ' +
+    (data.get('name') || '') +
+
+    '\nТелефон: ' +
+    (data.get('phone') || '') +
+
+    '\nТема: ' +
+    (data.get('topic') || '') +
+
+    '\nВопрос: ' +
+    (data.get('message') || '')
+
+  );
+
+  window.location.href =
+    'mailto:yelena.yeletskaya.70@mail.ru' +
+    '?subject=' +
+    subject +
+    '&body=' +
+    body;
+
+}
+
+</script>
+
+</body>
+</html>
